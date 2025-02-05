@@ -1,0 +1,118 @@
+/* Упрощенная версия @font-face */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500 700;
+    src: url(/fonts/montserrat/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format('woff2');
+}
+
+/* Глобальные стили */
+body {
+    color: #3b3a3a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+a, .read-more {
+    color: #014282;
+    text-decoration: none;
+}
+
+a:hover, .read-more:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: #2e2d2c;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 40px 0 30px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+/* Основная сетка */
+.wrapper {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.page-container, .header, .page-content {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.page-container {
+    position: relative;
+}
+
+.header {
+    height: 125px;
+    background: #f9f8fe;
+}
+
+/* Сайдбар */
+.sidebar {
+    width: 75px;
+    min-height: calc(100vh - 125px);
+    background: #014282;
+    transition: width .2s;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.sidebar-open {
+    width: 275px;
+}
+
+/* Оптимизированные кнопки */
+.styled-button {
+    border: 1px solid transparent;
+    background: none;
+    color: #2e2d2c;
+    text-align: center;
+    font-size: 15px;
+    width: 243px;
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    display: inline-block;
+}
+
+.styled-button--red {
+    border-color: #ec1646;
+}
+
+.styled-button--red:hover {
+    border-color: #ff174b;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none;
+        position: absolute;
+        height: calc(100vh - 125px);
+        overflow-y: auto;
+    }
+    .sidebar.sidebar-open {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 68px;
+    }
+    .sidebar {
+        min-height: calc(100vh - 68px);
+    }
+}
